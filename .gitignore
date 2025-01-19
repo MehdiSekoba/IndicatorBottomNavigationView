@@ -12,5 +12,6 @@
 /captures
 .externalNativeBuild
 .cxx
-.jitpack.yml
+git rm --cached .jitpack.yml
+git commit -m "Ignore .jitpack.yml file"
 local.properties
