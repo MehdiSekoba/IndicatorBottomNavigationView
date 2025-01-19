@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <!--my color-->
+    <color name="Eerie_Black">#181818</color>
+    <color name="Gray">#7c7c7c</color>
+    <color name="Vivid_Red">#f10a12</color>
+    <color name="Dark_Puce">#4c4241</color>
+
+</resources>

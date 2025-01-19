@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="IndicatorBottomNavigationView">
+        <attr name="indicatorHeaderHeight" format="dimension|reference" />
+        <attr name="indicatorHeaderColor" format="reference|color" />
+        <attr name="indicatorShadowColor" format="reference|color" />
+        <attr name="indicatorShadowVisible" format="boolean" />
+    </declare-styleable>
+
+</resources>
