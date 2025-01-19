@@ -13,3 +13,7 @@
 .externalNativeBuild
 .cxx
 local.properties
+# Hide local.properties and jitpack.yml
+jitpack.yml
+
+
