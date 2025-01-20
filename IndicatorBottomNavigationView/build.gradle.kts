@@ -46,7 +46,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "ir.mehdisekoba.indicatorbottomnavigationview"
                 artifactId = "IndicatorBottomNavigationView"
-                version = "1.0.0"
+                version = "1.0.1"
             }
         }
     }

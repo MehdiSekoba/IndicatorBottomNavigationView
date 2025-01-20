@@ -34,7 +34,11 @@ class IndicatorBottomNavigationView : BottomNavigationView,
 
     private val indicator = RectF()
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = MaterialColors.getColor(context, com.google.android.material.R.attr.colorSurface, Color.WHITE)
+        color = MaterialColors.getColor(
+            context,
+            com.google.android.material.R.attr.colorSurface,
+            Color.WHITE
+        )
     }
 
     private val shadow = RectF()
@@ -43,8 +47,16 @@ class IndicatorBottomNavigationView : BottomNavigationView,
     }
     private var path = Path()
 
-    private var indicatorShadowColor = MaterialColors.getColor(context, com.google.android.material.R.attr.colorPrimary, Color.WHITE)
-    private var indicatorHeaderColor = MaterialColors.getColor(context, com.google.android.material.R.attr.colorPrimary, Color.WHITE)
+    private var indicatorShadowColor = MaterialColors.getColor(
+        context,
+        com.google.android.material.R.attr.colorPrimary,
+        Color.WHITE
+    )
+    private var indicatorHeaderColor = MaterialColors.getColor(
+        context,
+        com.google.android.material.R.attr.colorPrimary,
+        Color.WHITE
+    )
     private var indicatorHeaderHeight = 20f
     private var indicatorShadowVisible = true
 
@@ -56,16 +68,29 @@ class IndicatorBottomNavigationView : BottomNavigationView,
             : super(context, attrs, defStyleAttr) {
         attrs?.apply {
             val ta = context.obtainStyledAttributes(this, R.styleable.IndicatorBottomNavigationView)
-            indicatorHeaderHeight = ta.getDimension(R.styleable.IndicatorBottomNavigationView_indicatorHeaderHeight, indicatorHeaderHeight)
-            indicatorHeaderColor = ta.getColor(R.styleable.IndicatorBottomNavigationView_indicatorHeaderColor, indicatorHeaderColor)
-            indicatorShadowColor = ta.getColor(R.styleable.IndicatorBottomNavigationView_indicatorShadowColor, indicatorShadowColor)
-            indicatorShadowVisible = ta.getBoolean(R.styleable.IndicatorBottomNavigationView_indicatorShadowVisible, indicatorShadowVisible)
+            indicatorHeaderHeight = ta.getDimension(
+                R.styleable.IndicatorBottomNavigationView_indicatorHeaderHeight,
+                indicatorHeaderHeight
+            )
+            indicatorHeaderColor = ta.getColor(
+                R.styleable.IndicatorBottomNavigationView_indicatorHeaderColor,
+                indicatorHeaderColor
+            )
+            indicatorShadowColor = ta.getColor(
+                R.styleable.IndicatorBottomNavigationView_indicatorShadowColor,
+                indicatorShadowColor
+            )
+            indicatorShadowVisible = ta.getBoolean(
+                R.styleable.IndicatorBottomNavigationView_indicatorShadowVisible,
+                indicatorShadowVisible
+            )
 
             ta.recycle()
         }
     }
 
     init {
+        itemRippleColor = null
         super.setOnItemSelectedListener(this)
     }
 
@@ -129,21 +154,46 @@ class IndicatorBottomNavigationView : BottomNavigationView,
 
                 indicator.set(left, top, right, bottom)
 
-                val leftShadow = (indicator.centerX() - indicator.width() / 2) + indicatorHeaderHeight / 2
+                val leftShadow =
+                    (indicator.centerX() - indicator.width() / 2) + indicatorHeaderHeight / 2
                 val topShadow = itemView.top + indicatorHeaderHeight
-                val rightShadow = (indicator.centerX() + indicator.width() / 2) - indicatorHeaderHeight / 2
+                val rightShadow =
+                    (indicator.centerX() + indicator.width() / 2) - indicatorHeaderHeight / 2
                 val bottomShadow = itemView.bottom.toFloat()
 
-                shadowPaint.shader = LinearGradient(0f, 0f, 0f, itemView.height.toFloat(), intArrayOf(getColorWithAlpha(indicatorShadowColor, 40), Color.TRANSPARENT), null, Shader.TileMode.CLAMP)
+                shadowPaint.shader = LinearGradient(
+                    0f,
+                    0f,
+                    0f,
+                    itemView.height.toFloat(),
+                    intArrayOf(getColorWithAlpha(indicatorShadowColor, 40), Color.TRANSPARENT),
+                    null,
+                    Shader.TileMode.CLAMP
+                )
 
                 shadow.set(leftShadow, topShadow, rightShadow, bottomShadow)
                 path = Path()
                 path.apply {
-                    moveTo(shadow.centerX() - shadow.width() / 2, shadow.centerY() - shadow.height() / 2)
-                    lineTo(shadow.centerX() + shadow.width() / 2, shadow.centerY() - shadow.height() / 2)
-                    lineTo(shadow.centerX() + shadow.width() / 2 + defaultSize / 2, shadow.centerY() + shadow.height() / 2)
-                    lineTo(shadow.centerX() - shadow.width() / 2 - defaultSize / 2, shadow.centerY() + shadow.height() / 2)
-                    lineTo(shadow.centerX() - shadow.width() / 2, shadow.centerY() - shadow.height() / 2)
+                    moveTo(
+                        shadow.centerX() - shadow.width() / 2,
+                        shadow.centerY() - shadow.height() / 2
+                    )
+                    lineTo(
+                        shadow.centerX() + shadow.width() / 2,
+                        shadow.centerY() - shadow.height() / 2
+                    )
+                    lineTo(
+                        shadow.centerX() + shadow.width() / 2 + defaultSize / 2,
+                        shadow.centerY() + shadow.height() / 2
+                    )
+                    lineTo(
+                        shadow.centerX() - shadow.width() / 2 - defaultSize / 2,
+                        shadow.centerY() + shadow.height() / 2
+                    )
+                    lineTo(
+                        shadow.centerX() - shadow.width() / 2,
+                        shadow.centerY() - shadow.height() / 2
+                    )
                 }
 
                 invalidate()
