@@ -114,7 +114,7 @@ class MainActivity : AppCompatActivity() {
 
 ### **Preview**
 Here’s a preview of how the library looks in action:
-![Sample GIF](https://github.com/MehdiSekoba/IndicatorBottomNavigationView/blob/master/app/art/sample.gif?raw=true)
+![Sample MP4](https://github.com/MehdiSekoba/IndicatorBottomNavigationView/blob/master/app/art/disable.mp4)
 
 ---
 
