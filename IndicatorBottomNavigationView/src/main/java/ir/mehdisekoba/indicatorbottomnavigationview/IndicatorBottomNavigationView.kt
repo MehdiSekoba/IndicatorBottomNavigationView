@@ -2,6 +2,7 @@ package ir.mehdisekoba.indicatorbottomnavigationview
 
 import android.animation.ValueAnimator
 import android.content.Context
+import android.content.res.ColorStateList
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.LinearGradient
@@ -9,6 +10,7 @@ import android.graphics.Paint
 import android.graphics.Path
 import android.graphics.RectF
 import android.graphics.Shader
+import android.graphics.drawable.ColorDrawable
 import android.util.AttributeSet
 import android.view.MenuItem
 import android.view.View
@@ -90,7 +92,8 @@ class IndicatorBottomNavigationView : BottomNavigationView,
     }
 
     init {
-        itemRippleColor = null
+        itemRippleColor = ColorStateList.valueOf(Color.TRANSPARENT)
+        itemBackground = ColorDrawable(Color.TRANSPARENT)
         super.setOnItemSelectedListener(this)
     }
 
