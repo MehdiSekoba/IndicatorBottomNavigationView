@@ -27,7 +27,7 @@ maven { url = uri("https://jitpack.io") }
 #### 2. Add the library dependency  
 In your module `build.gradle` file (usually `app`):  
 ```kotlin
-implementation("com.github.MehdiSekoba:IndicatorBottomNavigationView:v1.0.0")
+implementation("com.github.MehdiSekoba:IndicatorBottomNavigationView:v1.0.1")
 ```
 
 ---
@@ -114,7 +114,7 @@ class MainActivity : AppCompatActivity() {
 
 ### **Preview**
 Here’s a preview of how the library looks in action:
-![Sample MP4](https://github.com/MehdiSekoba/IndicatorBottomNavigationView/blob/master/app/art/disable.mp4)
+![Sample GIF](https://github.com/MehdiSekoba/IndicatorBottomNavigationView/blob/master/app/art/disable.gif)
 
 ---
 
